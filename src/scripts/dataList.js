@@ -21,6 +21,10 @@ function renderData() {
     // Removes the existing content from the element
     costumesContainer.innerText = "";
 
+    /*
+    For each costume in the data array, create a list item (li) and corresponding "remove" button
+    Remove button includes onclick listener which calls removeCostumeFromDataList function
+    */
     dataArray.forEach((costume) => {
         // Verify what we are working with
         console.log(costume);
@@ -38,16 +42,19 @@ function renderData() {
         // removeButton.innerText = "Remove" + costume;
         removeButton.innerText = `Remove ${costume}`;
     
+        // Add onclick listener to perform removeCostumeFromDataList function
         removeButton.onclick = (() => removeCostumeFromDataList(costume));
-        // Add the element to the container
+
+        // Add the element entry to the "ul" container
         costumesContainerList.appendChild(newCostumeEntry);
     
-        // Add the element to the container
+        // Add the element button to the "ul" container
         costumesContainerList.appendChild(removeButton);
-
-        // Add the container to the HTML Page
-        costumesContainer.appendChild(costumesContainerList);
     });
+
+    // Add the ul container to the HTML Page <section>
+    costumesContainer.appendChild(costumesContainerList);
+
 }
 
 
