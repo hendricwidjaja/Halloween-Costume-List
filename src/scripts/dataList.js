@@ -42,8 +42,11 @@ function renderData() {
         // removeButton.innerText = "Remove" + costume;
         removeButton.innerText = `Remove ${costume}`;
     
-        // Add onclick listener to perform removeCostumeFromDataList function
-        removeButton.onclick = (() => removeCostumeFromDataList(costume));
+        // // Add onclick listener to perform removeCostumeFromDataList function
+        // removeButton.onclick = (() => removeCostumeFromDataList(costume));
+
+        // Add 'click' event listener to perform removeCostumeFromDataList function
+        removeButton.addEventListener("click", () => removeCostumeFromDataList(costume));
 
         // Add the element entry to the "ul" container
         costumesContainerList.appendChild(newCostumeEntry);
